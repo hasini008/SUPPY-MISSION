@@ -59,8 +59,7 @@ function draw() {
 function keyPressed() {
  if (keyCode === DOWN_ARROW) {
    var  packageBody = createSprite(round(150 , 300) , 20 , 30);
-   packageBody.setStatic( packageBody , isStatic);
-    
+   Matter.Body.setStatic( packageBody , true );  
   }
 }
 
