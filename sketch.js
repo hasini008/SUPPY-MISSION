@@ -19,6 +19,7 @@ function setup() {
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
+	restituition = 0.5;
 
 	helicopterSprite=createSprite(width/2, 200, 10,10);
 	helicopterSprite.addImage(helicopterIMG)
@@ -33,8 +34,7 @@ function setup() {
 
 	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:3, isStatic:true});
 	World.add(world, packageBody);
-	packageBody.isStatic : (false);
-	restituition = 0.5;
+	
 	
 
 	//Create a Ground
@@ -58,8 +58,7 @@ function draw() {
 
 function keyPressed() {
  if (keyCode === DOWN_ARROW) {
-   var  packageBody = createSprite(round(150 , 300) , 20 , 30);
-   Matter.Body.setStatic( packageBody , true );  
+   Matter.Body.setStatic( packageBody , false );  
   }
 }
 
